@@ -1,10 +1,9 @@
 <template>
-  <div class="border">
-    is this working
-  </div>
+<router-view></router-view>
 </template>
 
 <script setup>
+
 
 </script>
 
