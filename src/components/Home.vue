@@ -94,7 +94,7 @@
       complex dashboard. Perfect choice for your next SaaS application."</p>
     <div class="flex justify-center items-center border ">
       <div><img src="/Favicon.png" alt="image of a girl" class="w-7"></div>
-      <p>Micheal Gough</p>
+      <p>Ballnerina Cappuchina</p>
       <p>CEO at Google</p>
     </div>
   </section>
