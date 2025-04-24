@@ -6,5 +6,5 @@
 }
 
 .router-link-exact-active {
-  @apply text-red-800 font-bold;
+  @apply text-[#5521B5] ;
 }
