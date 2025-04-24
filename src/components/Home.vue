@@ -1,5 +1,5 @@
 <template>
-  <section1 class="flex border">
+  <section id="first-section" class="flex border">
     <div>
       <h1>Building digital
         products & brands.</h1>
@@ -13,8 +13,8 @@
     <div>
       <div><img src="/hero.png" alt=""></div>
     </div>
-  </section1>
-  <section2>
+  </section>
+  <section id="second-section">
     <div class="flex justify-around border">
       <h2>airbnb</h2>
       <h2>Google</h2>
@@ -23,8 +23,8 @@
       <h2>mailchimp</h2>
       <h2>Mashable</h2>
     </div>
-  </section2>
-  <section3>
+  </section>
+  <section id="third-section">
     <div class="flex border">
       <div>
         <h2>Work with tools you already use</h2>
@@ -42,7 +42,7 @@
     <div class="flex border">
       <div><img src="/feature-2.png" alt="analytical graph"></div>
       <div>
-        <h2>We invest in the world’s potential</h2>
+        <h2>We invest in the world's potential</h2>
         <p>Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate
           critical development work, eliminate toil, and deploy changes with ease.</p>
           <ul>
@@ -55,7 +55,38 @@
           <p>Deliver great service experiences fast - without the complexity of traditional ITSM solutions.</p>
       </div>
     </div>
-  </section3>
+  </section>
+  <section id="fourth-section" class="flex border">
+    <div class="border">
+      <p>Trusted Worldwide</p>
+      <h2>Trusted by over 600 million users and 10,000 teams</h2>
+      <p>Our rigorous security and compliance standards are at the heart of all we do. We work tirelessly to protect you and your customers.</p>
+      <a href="www.google.com">Explore Legality Guide</a>
+      <a href="www.google.com">Visit the Trust Center</a>
+    </div>
+    <div class="border-3 border-red-900 grid grid-cols-2 ">
+      <div class="border">
+        <div>here will be image</div>
+        <h2>99.99% uptime</h2>
+        <p>For Landwind, with zero maintenance downtime</p>
+      </div>
+      <div class="border">
+        <div>here will be image</div>
+        <h2>600M+ Users</h2>
+        <p>Trusted by over 600 milion users around the world</p>
+      </div>
+      <div class="border">
+        <div>here will be image</div>
+        <h2>100+ countries</h2>
+        <p>Have used Landwind to create functional websites</p>
+      </div>
+      <div class="border">
+        <div>here will be image</div>
+        <h2>5+ Million</h2>
+        <p>FTransactions per day</p>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup>
