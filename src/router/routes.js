@@ -1,5 +1,6 @@
 import Nav from "../components/Nav.vue";
 import Home from "../components/Home.vue";
+import Company from "../components/Company.vue";
 
 const routes = [
   {
@@ -11,6 +12,16 @@ const routes = [
         path: "",
         name: "Home",
         component: Home,
+      },
+      {
+        path: "company",
+        name: "company",
+        component: Company,
+      },
+      {
+        path: "marketplace",
+        name: "Marketplace",
+        component: Company,
       },
     ],
   },

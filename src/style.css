@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+.container-mine {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.router-link-exact-active {
+  @apply text-red-800 font-bold;
+}

@@ -1,5 +1,7 @@
 <template>
-<router-view></router-view>
+  <div class="container-mine">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script setup>
