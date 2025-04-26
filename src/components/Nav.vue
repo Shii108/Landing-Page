@@ -1,5 +1,5 @@
 <template>
-  <nav class="border flex justify-between p-1">
+  <nav class="border flex justify-between py-2 top-0 sticky z-100 bg-white">
     <div class="flex gap-2 items-center">
       <div class="w-10"><img src="/Favicon.png" alt=""></div>
       <p class="font-semibold text-xl">Cappuccina</p>
