@@ -3,6 +3,7 @@
 .container-mine {
   max-width: 1300px;
   margin: 0 auto;
+  min-width: 830px
 }
 
 .router-link-exact-active {
