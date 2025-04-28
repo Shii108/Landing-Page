@@ -1,9 +1,9 @@
 <template>
   <section id="first-section" class="flex border">
     <div>
-      <h1 class="text-6xl font-extrabold">Building digital
+      <h1 class="text-6xl font-extrabold tracking-wide text-gray-900">Building digital
         products & brands.</h1>
-      <p class="text-xl text-gray-400 font-light">This free and open-source landing page template was built using the
+      <p class="text-xl text-gray-500 font-light">This free and open-source landing page template was built using the
         utility classes from Tailwind CSS and based
         on the components from the Flowbite Library and the Blocks System.</p>
       <div>
@@ -32,53 +32,56 @@
   <section id="third-section" class="bg-[#F9FAFB]">
     <div class="flex border">
       <div>
-        <h2 class="text-3xl font-extrabold text-gray-900">Work with tools you already use</h2>
-        <p class="text-xl font-light">Deliver great service experiences fast - without the complexity of traditional
+        <h2 class="text-3xl font-extrabold text-gray-900 tracking-wide">Work with tools you already use</h2>
+        <p class="text-xl font-light text-gray-500">Deliver great service experiences fast - without the complexity of
+          traditional
           ITSM solutions. Accelerate
           critical development work, eliminate toil, and deploy changes with ease</p>
         <ul class="border-t border-gray-200">
-          <li class="flex gap-1 items-center"><span><img src="/checked.png" alt="checkmark"
+          <li class="flex gap-1 items-center font-medium text-gray-900"><span><img src="/checked.png" alt="checkmark"
                 class="w-5 h-5"></span><span>Continuous integration and deployment</span></li>
-          <li class="flex gap-1 items-center"><span><img src="/checked.png" alt="checkmark"
+          <li class="flex gap-1 items-center font-medium text-gray-90"><span><img src="/checked.png" alt="checkmark"
                 class="w-5 h-5"></span><span>Development workflow</span></li>
-          <li class="flex gap-1 items-center"><span><img src="/checked.png" alt="checkmark"
+          <li class="flex gap-1 items-center font-medium text-gray-90"><span><img src="/checked.png" alt="checkmark"
                 class="w-5 h-5"></span><span>Knowledge management</span></li>
         </ul>
-        <p class="text-xl font-light">Deliver great service experiences fast - without the complexity of traditional
+        <p class="text-xl font-light text-gray-500">Deliver great service experiences fast - without the complexity of
+          traditional
           ITSM solutions.</p>
       </div>
       <div><img src="/feature-1.png" alt="analytical graph"></div>
     </div>
     <div class="flex border">
       <div><img src="/feature-2.png" alt="analytical graph"></div>
-      <div>
-        <h2 class="text-3xl font-bold">We invest in the world's potential</h2>
-        <p class="font-light text-xl">Deliver great service experiences fast - without the complexity of traditional
+      <div class="border border-pink-500 flex flex-col">
+        <h2 class="text-3xl font-extrabold">We invest in the world's potential</h2>
+        <p class="font-light text-xl text-gray-500">Deliver great service experiences fast - without the complexity of traditional
           ITSM solutions. Accelerate
           critical development work, eliminate toil, and deploy changes with ease.</p>
-        <ul>
-          <li class="flex gap-1 items-center border-b border-gray-200 py-2">
+        <ul class="border">
+          <li class="flex gap-1 items-center border-b border-gray-200 py-2 font-medium">
             <span><img src="/checked.png" alt="checkmark" class="w-5 h-5"></span>
             <span>Dynamic reports and dashboards</span>
           </li>
-          <li class="flex gap-1 items-center border-b border-gray-200 py-2">
+          <li class="flex gap-1 items-center border-b border-gray-200 py-2 font-medium">
             <span><img src="/checked.png" alt="checkmark" class="w-5 h-5"></span>
             <span>Templates for everyone</span>
           </li>
-          <li class="flex gap-1 items-center border-b border-gray-200 py-2">
+          <li class="flex gap-1 items-center border-b border-gray-200 py-2 font-medium">
             <span><img src="/checked.png" alt="checkmark" class="w-5 h-5"></span>
             <span>Development workflow</span>
           </li>
-          <li class="flex gap-1 items-center border-b border-gray-200 py-2">
+          <li class="flex gap-1 items-center border-b border-gray-200 py-2 font-medium">
             <span><img src="/checked.png" alt="checkmark" class="w-5 h-5"></span>
             <span>Limitless business automation</span>
           </li>
-          <li class="flex gap-1 items-center py-2">
-            <span><img src="/checked.png" alt="checkmark" class="w-5 h-5"></span>
+          <li class="flex gap-1 items-center py-2 font-medium">
+            <span><img src="/checked.png" alt="checkmark" class="w-5 h-5 "></span>
             <span>Knowledge management</span>
           </li>
         </ul>
-        <p class="font-light text-xl">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.</p>
+        <p class="font-light text-xl text-gray-400 ">Deliver great service experiences fast - without the complexity of traditional
+          ITSM solutions.</p>
       </div>
     </div>
   </section>
