@@ -1,5 +1,5 @@
 <template>
-  <section id="first-section" class="flex border">
+  <section id="hero-section" class="flex border">
     <div class="border border-red-900 flex flex-col gap-6 justify-center">
       <h1 class="text-6xl font-extrabold tracking-wide text-gray-900">Building digital
         products & brands.</h1>
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div>
-      <div><img src="/hero.png" alt="image of a arrow in a computer"></div>
+      <div class="border hidden md:block"><img src="/hero.png" alt="image of a arrow in a computer"></div>
     </div>
   </section>
 
@@ -34,8 +34,8 @@
 
 
   <section id="third-section" class="bg-[#F9FAFB]">
-    <div class="flex border-3 border-green-800">
-      <div class="flex flex-col justify-between py-4 ">
+    <div class="flex border-3 border-green-800 py-[69px]">
+      <div class="flex flex-col py-4 border justify-between">
         <h2 class="text-3xl font-extrabold text-gray-900 tracking-wide">Work with tools you already use</h2>
         <p class="text-xl font-light text-gray-500">Deliver great service experiences fast - without the complexity of
           traditional
@@ -53,17 +53,14 @@
           traditional
           ITSM solutions.</p>
       </div>
-      <div class="border"><img src="/feature-1.png" alt="analytical graph"></div>
+      <div class="border-4 border-red-900"><img src="/feature-1.png" alt="analytical graph" class="max-h-[900px]"></div>
     </div>
-    <div class="flex border">
-      <div><img src="/feature-2.png" alt="analytical graph"></div>
-      <div class="border border-pink-500 flex flex-col">
+    <div class="flex border py-[69px]">
+      <div><img src="/feature-2.png" alt="analytical graph" class="border"></div>
+      <div class="border border-pink-500 flex flex-col gap-6 py-9">
         <h2 class="text-3xl font-extrabold">We invest in the world's potential</h2>
-        <p class="font-light text-xl text-gray-500">Deliver great service experiences fast - without the complexity of
-          traditional
-          ITSM solutions. Accelerate
-          critical development work, eliminate toil, and deploy changes with ease.</p>
-        <ul class="border">
+        <p class="font-light text-xl text-gray-500">Deliver great service experiences fast - without the complexity of traditionalTSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease.</p>
+        <ul>
           <li class="flex gap-1 items-center border-b border-gray-200 py-2 font-medium">
             <span><img src="/checked.png" alt="checkmark" class="w-5 h-5"></span>
             <span>Dynamic reports and dashboards</span>
