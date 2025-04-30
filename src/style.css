@@ -3,9 +3,8 @@
 .container-mine {
   max-width: 1300px;
   margin: 0 auto;
-  /* min-width: 830px; */
 }
 
 .router-link-exact-active {
-  @apply text-[#5521B5] ;
+  color: #5521B5;
 }
