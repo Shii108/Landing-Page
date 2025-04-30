@@ -36,7 +36,7 @@
   </section>
 
 
-  <section id="about-us" class="bg-[#F9FAFB]  p-4">
+  <section id="about-us" class="bg-[#F9FAFB] p-4">
     <div class="flex lg:py-[96px] py-6 md:py-8">
       <div class="flex flex-col gap-4 py-4 justify-between">
         <h2 class="text-[clamp(1.625rem,1.393rem+0.54vw,1.875rem)] font-extrabold text-gray-900 tracking-wide">Work with
@@ -147,8 +147,8 @@
   </section>
 
 
-  <section id="quotes" class="p-4">
-    <div class="bg-[#F9FAFB] flex flex-col gap-6 lg:py-[96px] py-6 md:py-8">
+  <section id="quotes" class="p-4 bg-[#F9FAFB] ">
+    <div class="flex flex-col gap-6 lg:py-[96px] py-6 md:py-8">
       <div><img src="/PhQuotesFill (1).png" alt="quotes" class="w-10 m-auto"></div>
       <p class="font-medium text-[clamp(1.25rem,1.179rem+0.36vw,1.5rem)] text-gray-900">"Landwind is just awesome. It
         contains tons of predesigned
