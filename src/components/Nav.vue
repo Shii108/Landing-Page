@@ -31,7 +31,7 @@
     <ul class="flex flex-col  gap-6 text-2xl font-medium text-gray-700">
       <router-link class="hover:text-[#5521B5]" to="/" @click="isOpen = !open">Home</router-link>
       <router-link class="hover:text-[#5521B5]" to="company" @click="isOpen = !open">Company</router-link>
-      <router-link class="hover:text-[#5521B5]" to="validation">Validation</router-link>
+      <router-link class="hover:text-[#5521B5]" to="validation" @click="isOpen=!open">Validation</router-link>
       <router-link class="hover:text-[#5521B5]" to="features">Features</router-link>
       <router-link class="hover:text-[#5521B5]" to="team">Team</router-link>
       <router-link class="hover:text-[#5521B5]" to="contact">Contact</router-link>
