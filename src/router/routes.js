@@ -2,6 +2,7 @@ import Nav from "../components/Nav.vue";
 import Home from "../pages/Home.vue";
 import Company from "../pages/Company.vue";
 import Validation from "../pages/Validation.vue";
+import Products from "../pages/Products.vue";
 
 const routes = [
   {
@@ -23,6 +24,11 @@ const routes = [
         path: "validation",
         name: "validation",
         component: Validation,
+      },
+      {
+        path: "products",
+        name: "products",
+        component: Products,
       }
     ],
   },

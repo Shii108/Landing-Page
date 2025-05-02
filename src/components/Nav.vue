@@ -8,9 +8,9 @@
       <router-link class="hover:text-[#5521B5]" to="/">Home</router-link>
       <router-link class="hover:text-[#5521B5]" to="company">Company</router-link>
       <router-link class="hover:text-[#5521B5]" to="validation">Validation</router-link>
-      <!-- <router-link class="hover:text-[#5521B5]" to="features">Features</router-link>
-      <router-link class="hover:text-[#5521B5]" to="team">Team</router-link>
-      <router-link class="hover:text-[#5521B5]" to="contact">Contact</router-link> -->
+      <router-link class="hover:text-[#5521B5]" to="products">Products</router-link>
+      <!-- <router-link class="hover:text-[#5521B5]" to="team">Team</router-link> -->
+      <!-- <router-link class="hover:text-[#5521B5]" to="contact">Contact</router-link> -->
     </ul>
 
     <div class="flex md:gap-4 items-center">
