@@ -164,7 +164,7 @@
         complex dashboard. Perfect choice for your next SaaS application."
       </p>
       <div class="flex justify-center items-center gap-1 md:gap-2">
-        <div><img src="/home/Favicon.png" alt="image of a girl" class="w-5 md:w-7" /></div>
+        <div><img src="/Favicon.png" alt="image of a girl" class="w-5 md:w-7" /></div>
         <p class="font-medium">Ballnerina Capuchina</p>
         <p class="font-light text-gray-400 border-l-2 border-gray-900 pl-1 md:pl-2 text-sm">CEO at Google</p>
       </div>

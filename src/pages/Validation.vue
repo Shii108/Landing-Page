@@ -30,8 +30,9 @@
 
 
 <script setup>
-import { computed, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 import { useToast } from 'vue-toastification'
+import { watchDebounced } from '@vueuse/core'
 
 const username = ref('')
 const email = ref('')
@@ -92,9 +93,9 @@ const checkEmailFormat = () => {
   }
 }
 
-watch(() => password.value, (newValue, oldValue) => {
-  checkPasswordFormat()
-})
+// watch(() => password.value, (newValue, oldValue) => {
+//   checkPasswordFormat()
+// })
 
 // watch(() => username.value, (newValue, oldValue) => {
 //   checkUsernameFormat()
@@ -103,6 +104,19 @@ watch(() => password.value, (newValue, oldValue) => {
 // watch(() => passwordCheck.value, (newValue, oldValue) => {
 //   checkPasswordMatch()
 // })
+
+watchDebounced(username, () => {
+  checkUsernameFormat()
+}, { debounce: 300 })
+
+watchDebounced(password, () => {
+  checkPasswordFormat()
+}, { debounce: 300 })
+
+watchDebounced(email, () => {
+  checkEmailFormat()
+}, { debounce: 300 })
+
 
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <nav class="flex justify-between py-2 top-0 sticky z-100 bg-white p-4">
     <div class="flex gap-1 md:gap-2 items-center cursor-pointer" @click="scrollToTop()">
-      <div class="w-10"><img src="/home/Favicon.png" alt=""></div>
+      <div class="w-10"><img src="/Favicon.png" alt=""></div>
       <p class="font-semibold text-xl">Cappuccina</p>
     </div>
     <ul class="lg:flex hidden items-center gap-10 font-medium text-gray-700">
