@@ -1,7 +1,7 @@
 import Nav from "../components/Nav.vue";
-import Home from "../components/Home.vue";
-import Company from "../components/Company.vue";
-import Validation from "../components/Validation.vue";
+import Home from "../pages/Home.vue";
+import Company from "../pages/Company.vue";
+import Validation from "../pages/Validation.vue";
 
 const routes = [
   {
