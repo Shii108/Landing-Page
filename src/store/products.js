@@ -13,8 +13,8 @@ export const useProductsStore = defineStore("products", {
         );
         const data = await response.json();
         this.products = data.products;
-        console.log(data.products);
-        console.log("i am working or not");
+        // console.log(data.products);
+        // console.log("i am working or not");
       } catch (error) {
         console.error("Error fetching products:", error);
       } finally {
