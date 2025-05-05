@@ -5,7 +5,7 @@ import Validation from "../pages/Validation.vue";
 import Products from "../pages/Products.vue";
 
 const routes = [
-  {
+   {
     path: "/",
     name: "Nav",
     component: Nav,
@@ -33,4 +33,5 @@ const routes = [
     ],
   },
 ];
+
 export default routes;

@@ -1,14 +1,14 @@
 <template>
   <nav class="flex justify-between py-2 top-0 sticky z-100 bg-white p-4">
-    <div class="flex gap-1 md:gap-2 items-center cursor-pointer" @click="scrollToTop()">
+    <div class="flex gap-1 md:gap-2 items-center cursor-pointer" @click="scrollToTop('/')">
       <div class="w-10"><img src="/Favicon.png" alt=""></div>
       <p class="font-semibold text-xl">Cappuccina</p>
     </div>
     <ul class="lg:flex hidden items-center gap-10 font-medium text-gray-700">
       <router-link class="hover:text-[#5521B5]" to="/">Home</router-link>
       <router-link class="hover:text-[#5521B5]" to="company">Company</router-link>
-      <router-link class="hover:text-[#5521B5]" to="validation">Validation</router-link>
-      <router-link class="hover:text-[#5521B5]" to="products">Products</router-link>
+      <router-link class="hover:text-[#5521B5]" to="validation">Sign Up</router-link>
+      <router-link class="hover:text-[#5521B5]" to="products" @click="scrollToTop('products')">Products</router-link>
       <!-- <router-link class="hover:text-[#5521B5]" to="team">Team</router-link> -->
       <!-- <router-link class="hover:text-[#5521B5]" to="contact">Contact</router-link> -->
     </ul>
@@ -31,7 +31,7 @@
     <ul class="flex flex-col  gap-6 text-2xl font-medium text-gray-700">
       <router-link class="hover:text-[#5521B5]" to="/" @click="isOpen = !open">Home</router-link>
       <router-link class="hover:text-[#5521B5]" to="company" @click="isOpen = !open">Company</router-link>
-      <router-link class="hover:text-[#5521B5]" to="validation" @click="isOpen=!open">Validation</router-link>
+      <router-link class="hover:text-[#5521B5]" to="validation" @click="isOpen=!open">Sign Up</router-link>
       <!-- <router-link class="hover:text-[#5521B5]" to="features">Features</router-link>
       <router-link class="hover:text-[#5521B5]" to="team">Team</router-link>
       <router-link class="hover:text-[#5521B5]" to="contact">Contact</router-link> -->
@@ -43,15 +43,18 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router';
+import { useRoute } from 'vue-router';
+
 const isOpen = ref(false)
 const router = useRouter()
+const route = useRoute()
 
-const scrollToTop = () => {
+const scrollToTop = (route) => {
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
   })
-  router.push('/')
+  router.push(`/${route}`);
 }
 </script>
 
