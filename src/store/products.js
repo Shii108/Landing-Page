@@ -9,7 +9,7 @@ export const useProductsStore = defineStore("products", {
       this.loading = true;
       try {
         const response = await fetch(
-          "https://dummyjson.com/products"
+          "https://dummyjson.com/products?limit=100"
         );
         const data = await response.json();
         this.products = data.products;

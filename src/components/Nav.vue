@@ -15,7 +15,12 @@
 
     <div class="flex md:gap-4 items-center">
       <div>
-        <button class="border bg-[#5521B5] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#3e1691] transform hover:scale-103 transition duration-100 cursor-pointer">Download</button>
+        <button
+          class="border tracking-wider bg-[#5521B5] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#3e1691] transform hover:scale-103 transition duration-100 cursor-pointer">Testing</button>
+      </div>
+      <div>
+        <div class="w-[45px] relative"><img src="/public/nav/cart.png" alt="a shopping cart"></div>
+        <div class="absolute top-0 right-[15px] text-lg">{{ totalItems }}</div>
       </div>
       <div class="lg:hidden block">
         <button @click="isOpen = !isOpen">
@@ -27,11 +32,11 @@
     </div>
   </nav>
   <div class="fixed bg-white z-100 top-13 px-4 lg:hidden "
-  :class="{ 'h-full w-full transition-all opacity-100': !isOpen, ' transition-all h-0 w-0 opacity-0': isOpen }">
+    :class="{ 'h-full w-full transition-all opacity-100': !isOpen, ' transition-all h-0 w-0 opacity-0': isOpen }">
     <ul class="flex flex-col  gap-6 text-2xl font-medium text-gray-700">
       <router-link class="hover:text-[#5521B5]" to="/" @click="isOpen = !open">Home</router-link>
       <router-link class="hover:text-[#5521B5]" to="company" @click="isOpen = !open">Company</router-link>
-      <router-link class="hover:text-[#5521B5]" to="validation" @click="isOpen=!open">Sign Up</router-link>
+      <router-link class="hover:text-[#5521B5]" to="validation" @click="isOpen = !open">Sign Up</router-link>
       <!-- <router-link class="hover:text-[#5521B5]" to="features">Features</router-link>
       <router-link class="hover:text-[#5521B5]" to="team">Team</router-link>
       <router-link class="hover:text-[#5521B5]" to="contact">Contact</router-link> -->
@@ -41,6 +46,7 @@
 </template>
 
 <script setup>
+import Products from '../pages/Products.vue';
 import { ref } from 'vue'
 import { useRouter } from 'vue-router';
 import { useRoute } from 'vue-router';
@@ -48,6 +54,7 @@ import { useRoute } from 'vue-router';
 const isOpen = ref(false)
 const router = useRouter()
 const route = useRoute()
+const totalItems=ref(0)
 
 const scrollToTop = (route) => {
   window.scrollTo({
@@ -55,6 +62,10 @@ const scrollToTop = (route) => {
     behavior: 'smooth'
   })
   router.push(`/${route}`);
+}
+
+const addToCart = () => {
+  totalItems.value += 1
 }
 </script>
 

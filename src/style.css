@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* html {
+  overflow-y: scroll;
+} */
+
 .container-mine {
   max-width: 1300px;
   margin: 0 auto;

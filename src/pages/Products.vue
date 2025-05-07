@@ -8,10 +8,10 @@
           <img :src="product.thumbnail" :alt="product.title" class="w-full h-full object-contain rounded-md"
             loading="lazy" />
         </div>
-        <h2 class="font-bold text-xl text-gray-800 ">{{ product.title }}</h2>
+        <h2 class="font-bold  text-gray-800 ">{{ product.title }}</h2>
         <p class="text-sm text-gray-500 line-clamp-2">{{ product.description }}</p>
-        <p class="text-green-700 font-bold text-lg">Price: ${{ product.price }}</p>
-        <button
+        <p class="text-green-700 font-bold">Price: ${{ product.price }}</p>
+        <button @click="emit('addItem')"
           class="mt-auto border bg-[#5521B5] hover:bg-[#441a93]  text-white p-2 rounded w-full hover:cursor-pointer">
           Add to cart
         </button>
@@ -22,6 +22,7 @@
 <script setup>
 
 import { useProductsStore } from "../store/products";
+const emit = defineEmits(['addItem']);
 
 const productsStore = useProductsStore();
 
