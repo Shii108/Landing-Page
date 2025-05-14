@@ -3,6 +3,7 @@ import Home from "../pages/Home.vue";
 import Company from "../pages/Company.vue";
 import Validation from "../pages/Validation.vue";
 import Products from "../pages/Products.vue";
+import Cart from "../pages/Cart.vue";
 
 const routes = [
    {
@@ -29,6 +30,11 @@ const routes = [
         path: "products",
         name: "products",
         component: Products,
+      },
+      {
+        path: "cart",
+        name: "cart",
+        component: Cart,
       }
     ],
   },

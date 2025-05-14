@@ -16,7 +16,7 @@
         <button
           class="border tracking-wider bg-[#5521B5] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#3e1691] transform hover:scale-103 transition duration-100 cursor-pointer">Testing</button>
       </div>
-      <div>
+      <div class="cursor-pointer" @click="router.push('/cart')">
         <div class="w-[45px] relative"><img src="/nav/cart.png" alt="a shopping cart"></div>
         <div class="absolute top-0 right-[15px] text-lg">{{ productsStore.itemIncart }}</div>
       </div>

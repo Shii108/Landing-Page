@@ -51,5 +51,5 @@ export const useProductsStore = defineStore("products", () => {
   }
 
   // return the state and actions for the store
-  return { products, loading, fetchProducts, itemIncart, addToCart , sortMin , sortMax };
+  return { products, loading, fetchProducts, itemIncart, addToCart , sortMin , sortMax , cart };
 });

@@ -34,7 +34,6 @@
 <script setup>
 
 import { Search } from "lucide-vue-next";
-
 import { useProductsStore } from "../store/products";
 import { computed, ref, watch } from "vue";
 
