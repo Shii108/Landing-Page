@@ -42,6 +42,14 @@ export const useProductsStore = defineStore("products", () => {
     toast.error("nuh uh , u cant add more then one item ",{timeout: 1500});
   };
 
+  const sortMin = ()=>{
+    products.value.sort((a, b) => a.price - b.price);
+  }
+
+  const sortMax = ()=>{
+    products.value.sort((a, b) => b.price - a.price);
+  }
+
   // return the state and actions for the store
-  return { products, loading, fetchProducts, itemIncart, addToCart };
+  return { products, loading, fetchProducts, itemIncart, addToCart , sortMin , sortMax };
 });

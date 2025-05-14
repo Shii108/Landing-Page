@@ -1,4 +1,9 @@
 <template>
+  <div class="border p-4">
+    <span class="border p-2 text-gray-900">Sort by:</span>
+    <button class="border border-red-200 p-2 mr-2 cursor-pointer" @click="productsStore.sortMin">Min</button>
+    <button class="border border-red-300 p-2 mr-2 cursor-pointer" @click="productsStore.sortMax">Max</button>
+  </div>
   <div v-if="productsStore.loading">Kindly wait...</div>
   <div v-else>
     <div class="grid grid-cols-4 gap-4 p-4 ">
