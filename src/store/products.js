@@ -1,25 +1,47 @@
+// useProductsStore.js
 import { defineStore } from "pinia";
-export const useProductsStore = defineStore("products", {
-  state: () => ({
-    products: [],
-    loading: false,
-  }),
-  actions: {
-    async fetchProducts() {
-      this.loading = true;
-      try {
-        const response = await fetch(
-          "https://dummyjson.com/products?limit=100"
-        );
-        const data = await response.json();
-        this.products = data.products;
-        // console.log(data.products);
-        // console.log("i am working or not");
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      } finally {
-        this.loading = false;
-      }
-    },
-  },
+import { ref } from "vue";
+import { useToast } from "vue-toastification";
+import "vue-toastification/dist/index.css";
+
+export const useProductsStore = defineStore("products", () => {
+  // state (reactive variables)
+  const products = ref([]);
+  const loading = ref(false);
+  const itemIncart = ref(0);
+  const cart = ref([]);
+  const toast = useToast();
+
+  // actions (methods to mutate the state)
+  const fetchProducts = async () => {
+    loading.value = true;
+    try {
+      const response = await fetch("https://dummyjson.com/products?limit=100");
+      const data = await response.json();
+      products.value = data.products;
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    } finally {
+      loading.value = false;
+    }
+  };
+
+  const addToCart = (title, price, id) => {
+    const exists = cart.value.some((item) => item.title === title);
+
+    if (exists) {
+      showEroor();
+    } else {
+      cart.value.push({ title, price, id });
+      itemIncart.value++;
+      console.log(cart.value);
+    }
+  };
+
+  const showEroor = () => {
+    toast.error("nuh uh , u cant add more then one item ",{timeout: 1500});
+  };
+
+  // return the state and actions for the store
+  return { products, loading, fetchProducts, itemIncart, addToCart };
 });

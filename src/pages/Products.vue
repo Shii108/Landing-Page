@@ -11,7 +11,7 @@
         <h2 class="font-bold  text-gray-800 ">{{ product.title }}</h2>
         <p class="text-sm text-gray-500 line-clamp-2">{{ product.description }}</p>
         <p class="text-green-700 font-bold">Price: ${{ product.price }}</p>
-        <button @click="emit('addItem')"
+        <button @click="productsStore.addToCart(product.title , product.price , product.id)"  
           class="mt-auto border bg-[#5521B5] hover:bg-[#441a93]  text-white p-2 rounded w-full hover:cursor-pointer">
           Add to cart
         </button>
@@ -22,9 +22,10 @@
 <script setup>
 
 import { useProductsStore } from "../store/products";
-const emit = defineEmits(['addItem']);
+import { useCartInfo } from '../composable/cartinfo';
 
 const productsStore = useProductsStore();
+
 
 
 

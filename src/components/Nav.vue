@@ -9,8 +9,6 @@
       <router-link class="hover:text-[#5521B5]" to="company">Company</router-link>
       <router-link class="hover:text-[#5521B5]" to="validation">Sign Up</router-link>
       <router-link class="hover:text-[#5521B5]" to="products" @click="scrollToTop('products')">Products</router-link>
-      <!-- <router-link class="hover:text-[#5521B5]" to="team">Team</router-link> -->
-      <!-- <router-link class="hover:text-[#5521B5]" to="contact">Contact</router-link> -->
     </ul>
 
     <div class="flex md:gap-4 items-center">
@@ -19,8 +17,8 @@
           class="border tracking-wider bg-[#5521B5] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#3e1691] transform hover:scale-103 transition duration-100 cursor-pointer">Testing</button>
       </div>
       <div>
-        <div class="w-[45px] relative"><img src="/public/nav/cart.png" alt="a shopping cart"></div>
-        <div class="absolute top-0 right-[15px] text-lg">{{ totalItems }}</div>
+        <div class="w-[45px] relative"><img src="/nav/cart.png" alt="a shopping cart"></div>
+        <div class="absolute top-0 right-[15px] text-lg">{{ productsStore.itemIncart }}</div>
       </div>
       <div class="lg:hidden block">
         <button @click="isOpen = !isOpen">
@@ -46,15 +44,16 @@
 </template>
 
 <script setup>
-import Products from '../pages/Products.vue';
 import { ref } from 'vue'
 import { useRouter } from 'vue-router';
 import { useRoute } from 'vue-router';
+import { useProductsStore } from "../store/products";
 
 const isOpen = ref(false)
 const router = useRouter()
 const route = useRoute()
-const totalItems=ref(0)
+const productsStore = useProductsStore();
+
 
 const scrollToTop = (route) => {
   window.scrollTo({
@@ -64,9 +63,6 @@ const scrollToTop = (route) => {
   router.push(`/${route}`);
 }
 
-const addToCart = () => {
-  totalItems.value += 1
-}
 </script>
 
 <style lang="scss" scoped></style>
