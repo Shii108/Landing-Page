@@ -3,7 +3,8 @@ import { defineStore } from "pinia";
 import { ref } from "vue";
 import { useToast } from "vue-toastification";
 import "vue-toastification/dist/index.css";
-
+import Cookies from "js-cookie";
+import { Cookie } from "lucide-vue-next";
 export const useProductsStore = defineStore("products", () => {
   // state (reactive variables)
   const products = ref([]);
@@ -11,6 +12,7 @@ export const useProductsStore = defineStore("products", () => {
   const itemIncart = ref(0);
   const cart = ref([]);
   const toast = useToast();
+  // const disabled = ref(false);
 
   // actions (methods to mutate the state)
   const fetchProducts = async () => {
@@ -33,13 +35,22 @@ export const useProductsStore = defineStore("products", () => {
       showEroor();
     } else {
       cart.value.push({ title, price, id });
-      toast.success("Item added to cart", { timeout: 1500 });
+      Cookies.set("cartItems", JSON.stringify(cart.value), { expires: 7 });
+      toast.success("Item added to cart", {
+        timeout: 1500,
+        pauseOnHover: false,
+      });
       itemIncart.value++;
+      Cookies.set("itemIncart", itemIncart.value, { expires: 7 });
     }
   };
 
   const showEroor = () => {
-    toast.error("nuh uh , u cant add more then one item ", { timeout: 1500 });
+    toast.error("nuh uh , u cant add more then one item", {
+      timeout: 1500,
+      pauseOnHover: false,
+    });
+    // console.log("nuh uh , u cant add more then one item");
   };
 
   const sortMin = () => {
@@ -56,6 +67,19 @@ export const useProductsStore = defineStore("products", () => {
     const index = cart.value.findIndex((item) => item.id === id);
     cart.value.splice(index, 1);
     itemIncart.value--;
+    Cookies.set("cartItems", JSON.stringify(cart.value), { expires: 7 });
+    Cookies.set("itemIncart", itemIncart.value, { expires: 7 });
+  };
+
+  const getCookie = () => {
+    const savedCart = Cookies.get("cartItems");
+    if (savedCart) {
+      cart.value = JSON.parse(savedCart);
+    }
+    const savedItemInCart = Cookies.get("itemIncart");
+    if (savedItemInCart) {
+      itemIncart.value = parseInt(savedItemInCart);
+    }
   };
   // return the state and actions for the store
   return {
@@ -68,5 +92,6 @@ export const useProductsStore = defineStore("products", () => {
     sortMax,
     cart,
     deleteItem,
+    getCookie,
   };
 });
