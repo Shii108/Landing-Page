@@ -1,5 +1,5 @@
 <template>
-  <div class="border p-4 flex items-center gap-2">
+  <div class="p-4 flex items-center gap-2 sticky top-15 bg-white  z-10">
     <div class="inline-block border p-2">
       <Search color="gray" :size="27" />
     </div>

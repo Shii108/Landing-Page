@@ -33,23 +33,40 @@ export const useProductsStore = defineStore("products", () => {
       showEroor();
     } else {
       cart.value.push({ title, price, id });
+      toast.success("Item added to cart", { timeout: 1500 });
       itemIncart.value++;
-      console.log(cart.value);
     }
   };
 
   const showEroor = () => {
-    toast.error("nuh uh , u cant add more then one item ",{timeout: 1500});
+    toast.error("nuh uh , u cant add more then one item ", { timeout: 1500 });
   };
 
-  const sortMin = ()=>{
+  const sortMin = () => {
     products.value.sort((a, b) => a.price - b.price);
-  }
+    window.top.scrollTo(0, 0);
+  };
 
-  const sortMax = ()=>{
+  const sortMax = () => {
     products.value.sort((a, b) => b.price - a.price);
-  }
+    window.top.scrollTo(0, 0);
+  };
 
+  const deleteItem = (id) => {
+    const index = cart.value.findIndex((item) => item.id === id);
+    cart.value.splice(index, 1);
+    itemIncart.value--;
+  };
   // return the state and actions for the store
-  return { products, loading, fetchProducts, itemIncart, addToCart , sortMin , sortMax , cart };
+  return {
+    products,
+    loading,
+    fetchProducts,
+    itemIncart,
+    addToCart,
+    sortMin,
+    sortMax,
+    cart,
+    deleteItem,
+  };
 });
