@@ -11,7 +11,7 @@
           class="flex items-center gap-2 bg-gray-900 cursor-pointer py-1 px-2 w-max rounded-md hover:bg-red-700 transition duration-200"
           @click="productsStore.deleteItem(product.id)">
           <p class="font-medium text-white">Nuke it</p>
-          <Bomb color="yellow" :size="20" />
+          <Bomb class="text-yellow-400" />
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
 <script setup>
 import { useProductsStore } from "../store/products";
 import { Bomb } from "lucide-vue-next";
-import { onMounted } from "vue";
+import { onMounted } from "vue"
 
 const productsStore = useProductsStore();
 

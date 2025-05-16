@@ -4,7 +4,6 @@ import { ref } from "vue";
 import { useToast } from "vue-toastification";
 import "vue-toastification/dist/index.css";
 import Cookies from "js-cookie";
-import { Cookie } from "lucide-vue-next";
 export const useProductsStore = defineStore("products", () => {
   // state (reactive variables)
   const products = ref([]);
@@ -12,6 +11,7 @@ export const useProductsStore = defineStore("products", () => {
   const itemIncart = ref(0);
   const cart = ref([]);
   const toast = useToast();
+  const sortBy = ref("Auto")
   // const disabled = ref(false);
 
   // actions (methods to mutate the state)
@@ -35,13 +35,12 @@ export const useProductsStore = defineStore("products", () => {
       showEroor();
     } else {
       cart.value.push({ title, price, id });
-      Cookies.set("cartItems", JSON.stringify(cart.value), { expires: 7 });
       toast.success("Item added to cart", {
         timeout: 1500,
         pauseOnHover: false,
       });
       itemIncart.value++;
-      Cookies.set("itemIncart", itemIncart.value, { expires: 7 });
+      updateCookies();
     }
   };
 
@@ -53,22 +52,28 @@ export const useProductsStore = defineStore("products", () => {
     // console.log("nuh uh , u cant add more then one item");
   };
 
+  const updateCookies = () => {
+    Cookies.set("cartItems", JSON.stringify(cart.value), { expires: 7 });
+    Cookies.set("itemsInCart", itemsInCart.value, { expires: 7 });
+  };
+
   const sortMin = () => {
     products.value.sort((a, b) => a.price - b.price);
     window.top.scrollTo(0, 0);
+    sortBy.value = "Min"
   };
 
   const sortMax = () => {
     products.value.sort((a, b) => b.price - a.price);
     window.top.scrollTo(0, 0);
+    sortBy.value = "Max"
   };
 
   const deleteItem = (id) => {
     const index = cart.value.findIndex((item) => item.id === id);
     cart.value.splice(index, 1);
     itemIncart.value--;
-    Cookies.set("cartItems", JSON.stringify(cart.value), { expires: 7 });
-    Cookies.set("itemIncart", itemIncart.value, { expires: 7 });
+    updateCookies();
   };
 
   const getCookie = () => {
@@ -93,5 +98,6 @@ export const useProductsStore = defineStore("products", () => {
     cart,
     deleteItem,
     getCookie,
+    sortBy,
   };
 });
